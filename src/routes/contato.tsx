@@ -2,7 +2,9 @@ import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight, Instagram, Linkedin } from "lucide-react";
 import { z } from "zod";
-import { GoogleMap } from "@/components/google-map";
+// Mapa interativo pausado ate a chave propria do Google Maps ser configurada.
+// import { GoogleMap } from "@/components/google-map";
+import { StaticMap } from "@/components/static-map";
 import { ContactCta } from "@/components/contact-cta";
 import { Button } from "@/components/ui/button";
 import { GridLines } from "@/components/grid-lines";
@@ -247,7 +249,7 @@ function ContactPage() {
           <div className="grid gap-10 lg:grid-cols-[0.7fr_1.8fr] lg:gap-x-20 lg:gap-y-8">
 
             <div className="col-span-full -mx-5 w-auto lg:-mx-10">
-              <GoogleMap />
+              <StaticMap />
             </div>
 
           </div>
