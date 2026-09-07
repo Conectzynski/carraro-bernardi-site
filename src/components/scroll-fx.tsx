@@ -316,10 +316,12 @@ export function ScrollExpand({
   const side = inset * (1 - p);
 
   return (
+    // `overflow: clip` acompanha o clipPath: o clipPath recorta so a pintura,
+    // sem conter o transbordo que o scale/translate interno gera na rolagem.
     <div
       ref={ref}
       className={className}
-      style={{ clipPath: `inset(0 ${side}% 0 ${side}%)`, willChange: "clip-path" }}
+      style={{ clipPath: `inset(0 ${side}% 0 ${side}%)`, overflow: "clip", willChange: "clip-path" }}
     >
       <div
         style={{
@@ -363,10 +365,12 @@ export function ScrollWipe({
       : `inset(0 0 ${hidden}% 0)`;
 
   return (
+    // `overflow: clip` acompanha o clipPath: o clipPath recorta so a pintura,
+    // sem conter o transbordo que o scale/translate interno gera na rolagem.
     <div
       ref={ref}
       className={className}
-      style={{ clipPath: clip, willChange: "clip-path" }}
+      style={{ clipPath: clip, overflow: "clip", willChange: "clip-path" }}
     >
       <div
         style={{
@@ -410,10 +414,12 @@ export function ScrollSlideMask({
   const dir = direction === "left" ? -1 : 1;
 
   return (
+    // `overflow: clip` acompanha o clipPath: o clipPath recorta so a pintura,
+    // sem conter o transbordo que o scale/translate interno gera na rolagem.
     <div
       ref={ref}
       className={className}
-      style={{ clipPath: clip, willChange: "clip-path" }}
+      style={{ clipPath: clip, overflow: "clip", willChange: "clip-path" }}
     >
       <div
         style={{

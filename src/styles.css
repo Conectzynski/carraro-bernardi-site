@@ -154,6 +154,11 @@
   html,
   body {
     max-width: 100%;
+    /* Contem o transbordo horizontal dos efeitos de scroll (ScrollSlideIn
+       translada ate 64px na lateral). Usar `clip` e nao `hidden`: `hidden`
+       criaria um contexto de rolagem e quebraria os efeitos que dependem de
+       position: sticky (ScrollPinExpand, StickyTail). */
+    overflow-x: clip;
   }
 
   body {
